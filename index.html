@@ -19,24 +19,21 @@
 
     </div>
 
-    <script>
+<script>
   function bmi() {
     var h = document.getElementById("height").value;
     var w = document.getElementById("weight").value;
     var bmi = w / ((h / 100) * (h / 100));
     var total = bmi.toFixed(2);
-    document.getElementById("result").innerHTML = "Your BMI is " + total
-      var savedData = JSON.parse(localStorage.getItem("bmiHistory")) || [];
-      var newEntry = {
-        height: h,
-        weight: w,
-        bmi: total,
-        date: new Date().toLocaleString()
-      };
-      savedData.push(newEntry);
-      localStorage.setItem("bmiHistory", JSON.stringify(savedData));
-
-
+    document.getElementById("result").innerHTML = "Your BMI is " + total;
+    var savedData = JSON.parse(localStorage.getItem("bmiHistory")) || [];
+    var newEntry = {
+      height: h,
+      weight: w,
+      bmi: total,
+      date: new Date().toLocaleString()
+    };
+savedData.push(newEntry); localStorage.setItem("bmiHistory", JSON.stringify(savedData)); console.log("Saved BMI History:", savedData);
   }
 </script>
 
